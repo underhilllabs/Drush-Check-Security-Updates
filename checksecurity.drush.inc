@@ -66,15 +66,16 @@ function checksecurity_drush_help($section) {
  * @see drush.api.php
  */
 function drush_checksecurity_check_security_updates() {
-  $site_list = drush_invoke("sa");
-  $sites = implode("\n", $site_list);
-  //  foreach ($site_list as $site) {
+  $site_list = sitealias_sitealias_print_complete();
+  $sites = $site_list['values'];
   foreach ($sites as $site) {
+    if ($site == '@none') {
+      continue;
+    }
     drush_print("Checking: " . $site);
-    //print_r($site_record);
     // commandline options for update-code command
     $options = array('--pipe','--security-only');
-    $result_record = drush_invoke($site, 'upc','', $options);
+    $result_record = drush_invoke_process($site, 'pm-updatecode', $options);
     if($result_record) {
       drush_print($result_record['output']);
     }
