@@ -1,1 +1,3 @@
 name = Drush Check Security
+description = A drush command to Check for Security Updates for all site aliases.
+files[] = checksecurity.drush.inc
