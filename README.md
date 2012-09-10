@@ -1,14 +1,14 @@
 Drush CSU
 =========
 
-A drush command to Check for Security Updates for all Site Aliases
+A drush command to check for security updates for all drush site aliases.
 
 Installation
-=============
-cd ~/.drush/commands
+------------
 
-git clone https://github.com/underhilllabs/Drush-Check-Security-Updates.git
+    git clone https://github.com/underhilllabs/Drush-Check-Security-Updates.git ~/.drush/commands/check_security_updates
 
-Run
-====
-drush csu
+Usage
+-----
+
+    drush csu
