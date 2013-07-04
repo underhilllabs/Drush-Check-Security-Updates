@@ -69,7 +69,7 @@ function drush_checksecurity_check_security_updates() {
   $site_list = sitealias_sitealias_print_complete();
   $sites = $site_list['values'];
   foreach ($sites as $site) {
-    if ($site == '@none') {
+    if ($site == '@none' || $site == '@self') {
       continue;
     }
     drush_print("Checking: " . $site);
